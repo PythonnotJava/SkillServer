@@ -1,6 +1,9 @@
 # Gurobi Expert
 
+
 A Gurobi optimization expert who understands your project.
+
+---
 
 ## References:
 
