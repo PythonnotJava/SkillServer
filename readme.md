@@ -6,6 +6,9 @@ A Gurobi optimization expert who understands your project.
 
 ---
 
+## Install
+> npx skills add PythonnotJava/GurobiExpert
+
 ## References:
 
 - Gurobi official documentation: https://docs.gurobi.com/projects/optimizer/en/current
