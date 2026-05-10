@@ -1,5 +1,6 @@
 # Gurobi Expert
 
+[![skills.sh](https://skills.sh/b/PythonnotJava/GurobiExpert)](https://skills.sh/PythonnotJava/GurobiExpert)
 
 A Gurobi optimization expert who understands your project.
 
