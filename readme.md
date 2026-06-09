@@ -26,8 +26,7 @@ Prevents tasks from being forgotten in long conversations. Maintains a persisten
 
 ### toolshell
 
-Wraps Claude's built-in file and shell tools with a configurable safety layer. Reads a `memory.json` config from the project root to determine operation mode (`normal` for confirm-before-act, `auto` for fully autonomous), and optionally stores/recalls cross-session memory via SQLite (with optional Qdrant vector search).
-
+This allows the large model to obtain operation permissions based on the memory.json settings and enables the embedded model to have long-term memory capabilities (requires the local qdrant program).
 ### gurobi-expert
 
 A deep-knowledge assistant for Gurobi Optimizer 13.0. Covers LP, MIP, QP, NLP, multi-objective optimization, decomposition methods, and classical OR problems (TSP, VRP, scheduling, etc.). Includes reference documents and code templates.
