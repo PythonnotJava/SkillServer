@@ -1,0 +1,129 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "system_detect_os",
+      "description": "检测操作系统信息，包括系统类型、版本、架构、主机名等。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "anonymize": {
+            "type": "boolean",
+            "description": "是否脱敏主机名和用户名（仅显示前3字符）",
+            "default": false
+          }
+        },
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "system_detect_python",
+      "description": "检测 Python 环境信息，包括版本、解释器路径、虚拟环境状态等。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "system_detect_tools",
+      "description": "批量检测指定工具的可用性和版本。支持检测 git, npm, docker, pip 等常用命令行工具。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tools": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "要检测的工具名称列表。留空则检测所有常用工具。",
+            "default": []
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "每个工具的检测超时时间（秒）",
+            "default": 5
+          }
+        },
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "system_get_env",
+      "description": "读取指定的环境变量值。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "环境变量名称列表，如 ['PATH', 'HOME', 'LANG']"
+          },
+          "anonymize_paths": {
+            "type": "boolean",
+            "description": "是否脱敏路径中的用户名部分",
+            "default": false
+          }
+        },
+        "required": ["keys"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "system_test_network",
+      "description": "测试网络连通性和 DNS 解析。检测指定目标是否可达。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "测试目标域名或 IP 列表",
+            "default": ["github.com", "pypi.org", "npmjs.com"]
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "每个目标的超时时间（秒）",
+            "default": 3
+          }
+        },
+        "required": []
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "system_recommend_commands",
+      "description": "根据当前系统环境和可用工具，推荐执行特定任务的命令。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string",
+            "description": "任务描述，如 '安装 Python 包'、'查看进程'、'清理缓存' 等"
+          },
+          "context": {
+            "type": "object",
+            "description": "可选的上下文信息，如编程语言、框架等",
+            "properties": {
+              "language": {"type": "string"},
+              "framework": {"type": "string"},
+              "package_name": {"type": "string"}
+            }
+          }
+        },
+        "required": ["task"]
+      }
+    }
+  }
+]
