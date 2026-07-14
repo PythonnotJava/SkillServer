@@ -1,6 +1,6 @@
 # SkillServer
 
-个人技能库。此仓库存储自定义技能、持久化 Agent 记忆和身份配置文件。
+个人技能库。
 
 > 💡： 部分技能已作为元技能被[RemindAI](https://github.com/PythonnotJava/RemindAI)作为底层绑定
 
