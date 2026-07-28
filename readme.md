@@ -14,6 +14,7 @@ SkillServer/
 │   ├── skill_router/        # 技能元系统（路由、注入、注册表）
 │   ├── system_detection/    # 系统检测技能
 │   └── gurobi-expert/       # Gurobi Optimizer 13.0 专家技能
+|   └── typst-guide-skill/   # typst指导说明书
 └── readme.md                # 本文件
 ```
 
