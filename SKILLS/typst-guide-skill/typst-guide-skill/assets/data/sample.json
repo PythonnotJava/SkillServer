@@ -1,0 +1,10 @@
+{
+  "title": "Glacier Dynamics Demo",
+  "author": "Typst Guide Skill",
+  "version": "1.0.0",
+  "tags": ["glacier", "fluid", "report"],
+  "metrics": {
+    "sites": 3,
+    "years": 10
+  }
+}

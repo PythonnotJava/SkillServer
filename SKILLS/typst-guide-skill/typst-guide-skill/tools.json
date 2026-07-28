@@ -1,0 +1,95 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "typst_compile",
+      "description": "Compile a Typst (.typ) source file to PDF/PNG/SVG using the local typst CLI. Use after writing or editing Typst documents to verify they compile. Working directory should be the project/demo folder that contains the entry file (or pass paths accordingly).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Path to the entry .typ file (relative to cwd or absolute)."
+          },
+          "output": {
+            "type": "string",
+            "description": "Optional output path (e.g. out/main.pdf, preview.png)."
+          },
+          "root": {
+            "type": "string",
+            "description": "Optional --root directory for multi-file projects."
+          },
+          "font_path": {
+            "type": "string",
+            "description": "Optional extra font directory (--font-path)."
+          },
+          "inputs": {
+            "type": "object",
+            "description": "Optional key/value map injected as repeated --input key=value (values become strings in sys.inputs).",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "extra_args": {
+            "type": "array",
+            "description": "Optional extra CLI args, e.g. [\"-d\"].",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["input"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "typst_query",
+      "description": "Run `typst query` on a document to extract elements (headings, figures, labels, etc.). Useful for structure checks and automation.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Path to the .typ file."
+          },
+          "selector": {
+            "type": "string",
+            "description": "Query selector, e.g. \"heading\", \"figure\", or a label selector supported by the installed CLI."
+          },
+          "field": {
+            "type": "string",
+            "description": "Optional --field name."
+          },
+          "root": {
+            "type": "string",
+            "description": "Optional --root directory."
+          }
+        },
+        "required": ["input", "selector"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "typst_fonts",
+      "description": "List fonts discovered by the Typst CLI (`typst fonts`). Use when debugging missing CJK/Latin fonts.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "variants": {
+            "type": "boolean",
+            "description": "If true, pass --variants."
+          },
+          "font_path": {
+            "type": "string",
+            "description": "Optional extra --font-path."
+          }
+        },
+        "required": []
+      }
+    }
+  }
+]

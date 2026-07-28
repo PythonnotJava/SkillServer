@@ -1,0 +1,5 @@
+name,value,unit,note
+Temperature, -5, C, surface
+Velocity, 120, m/year, centerline
+Thickness, 250, m, mean
+Discharge, 3.2, km3/year, annual
